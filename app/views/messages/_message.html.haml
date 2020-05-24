@@ -6,6 +6,6 @@
       = message.created_at.strftime("%Y年%m月%d日 %H時%M分")
   .main__chats__chat__bottom
     - if message.message.present?
-      %p.main__chats__chat__text__comment
+      %p.main__chats__chat__bottom__comment
         = message.message
-    = image_tag message.image.url, class: 'main__chats__chat__text__image' if message.image.present?
+    = image_tag message.image.url, class: 'main__chats__chat__bottom__image' if message.image.present?

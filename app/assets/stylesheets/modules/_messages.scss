@@ -91,14 +91,14 @@
       &__hidden {
         display: none;
       }
-      &__submit {
-        line-height: 50px;
-        padding: 0px 20px;
-        width: 90px;
-        color: #fff;
-        background-color: #38aef0;
-        margin-left: 15px;
-      }
+    }
+    .submit_save {
+      line-height: 50px;
+      padding: 0px 20px;
+      width: 90px;
+      color: #fff;
+      background-color: #38aef0;
+      margin-left: 15px;
     }
   }
 }
@@ -161,7 +161,7 @@
   }
 }
 
-/* flaxh_message */
+/* flash_message */
 .notification {
   .notice {
     background-color: $light_blue;
