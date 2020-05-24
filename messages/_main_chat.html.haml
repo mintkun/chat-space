@@ -1,0 +1,22 @@
+.main
+  .main__header
+    .main__header__leftbox
+      .main__header__leftbox__groupname
+        = @group.name
+      .main__header__leftbox__member 
+        Member :
+        - @group.users.each do |user|
+          = user.name
+    .main__header__editbtn
+      = link_to edit_group_path(@group.id) do
+        edit
+  .main__chats
+    = render partial: "message", collection: @messages
+  .main__form
+    = form_for [@group, @message], html: {class: "main__form__box"} do |f|
+      .main__form__box
+        = f.text_field :message, class: 'main__form__box__text', placeholder: 'type a chat'
+        = f.label :image, class: 'main__form__box__pic' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'main__form__box__hidden'
+      = f.submit 'Send', class: 'main__form__box__submit'

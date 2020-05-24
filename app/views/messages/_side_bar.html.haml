@@ -1,0 +1,20 @@
+.side
+  .side__header
+    .side__header__box
+      %h3.side__header__box__username
+        = current_user.name
+      %ul.side__header__box__menu
+        %li.side__header__box__menu__newgroup
+          = link_to new_group_path(current_user) do
+            = icon('fas', 'pen-square', class: 'icon')
+        %li.side__header__box__menu__edituser
+          = link_to edit_user_path(current_user) do
+            = icon('fas', 'cog', class: 'icon')
+  .side__list
+    - current_user.groups.each do |group|
+      .group
+        = link_to group_messages_path(group), class: "group-link" do
+          .group-link__name
+            = group.name
+          .group-link__chat
+            = group.show_last_chat(group.messages)
